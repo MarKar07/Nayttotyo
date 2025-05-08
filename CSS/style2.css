@@ -1,0 +1,387 @@
+
+/* yleisiä määrityksiä */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+    background-color: rgb(255, 255, 255); /* bodyn taustaväri */
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    font-family: "roboto", sans-serif;
+}
+
+.main-content {
+    flex: 1;
+}
+
+li,
+a {
+    font-weight: 300;
+    font-size: 18px;
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    padding: 30px 0%;
+    position: fixed;
+    width: 100%;
+    background: rgb(255, 255, 255);
+    z-index: 1000;
+}
+
+.my-navbar * {  /* Tämä on tärkeä, jotta navbarin linkit ja määritykset toimivat */
+    all: unset;
+}
+
+.nav_links {
+    list-style: none;
+    background: rgb(255, 255, 255);
+}
+
+.nav_links li {
+    display: inline-block;
+    padding: 0px 20px;
+}
+
+.nav_links li a {
+    transition: all 0.2s ease 0s;
+}
+
+.nav_links li a:hover {
+    color: rgb(120, 95, 95);
+}
+
+.half-header {
+    background-color: rgb(225, 191, 191);
+    text-align: center;
+    color: rgb(0, 0, 0);
+    padding: 0 25%;
+    width: 100%;
+}
+
+.half-header-text {
+    background-color: transparent;
+    color: rgb(0, 0, 0);
+    animation: fadeIn 2s ease-out;
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; transform: translateY(-20px); } /* half-headerin animaatio */
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+.carousel-inner img { /* Galleria-karusellin kuvien ja nappien määritykset */
+    width: 100%;      
+    height: 650px;    
+    object-fit: cover; 
+}
+
+.carousel {
+    position: relative;
+}
+
+.carousel-indicators button.active {
+    background-color: white !important;
+    opacity: 1;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+    color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.artikkeli-grid { /* Etusivun laatikoiden määritykset */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 50px;
+    padding: 5% 0%;
+    background-size: cover;
+    background-position: center;
+}
+
+.artikkeli-box { 
+    align-items: stretch;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; 
+    height: 100%; 
+    width: 600px;
+    border: 1px solid black;
+    box-shadow: 0 0 5px 0 rgb(225, 225, 225);
+    border-radius: 25px;
+    background-color: rgba(255, 255, 255, 0.85);
+    margin: auto;
+    min-height: 400px;
+    transition: all 0.5s ease-in-out; 
+}
+
+.artikkeli-img { 
+    transition: transform 2s ease-in-out;
+    width: 100%;
+    height: auto;
+    background-color: rgb(165, 90, 90);
+    border-radius: 25px;
+}
+
+.artikkeli-img a:hover img {
+    transform: scale(1.05); /* Pieni zoomaus hoverilla */
+    transition: transform 0.7s ease-in-out; /* Hoverin aika */ 
+    filter: grayscale(80%); /* Harmaasävy hoverilla */
+    
+}
+
+.artikkeli-img img { /* Etusivun laatikoiden kuvien määritykset jatkuu */
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    object-position: center;
+    background-color: gray;
+    border-radius: 25px;
+}
+
+.artikkeli-text {
+    min-height: 120px; /* Säädä tarvittaessa */
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 25px;
+    flex-grow: 1; /* Tekstiosa venyy tasaisesti */
+}
+
+.artikkeli-text .artikkeli-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: black;
+    background-color: rgb(207, 199, 199);
+    text-align: center;
+    border-radius: 25px;
+}
+
+.artikkeli-text .artikkeli-title:hover {
+    color: rgb(135, 96, 96);
+    transition: all ease 0.2s;
+}
+
+.artikkeli-text p {
+    background-color: rgb(192, 192, 192);
+    color: black;
+    text-align: center;
+    border-radius: 25px;
+}
+
+.fa-map-marker-alt, .fa-phone, .fa-envelope, .fab { /* Font Awesome -ikoneiden määritykset yhteydeottosivulla */
+    margin-right: 10px;
+    color: black;
+}
+
+.fab {
+    font-size: 1.5em;
+    margin: 0 5px;
+}
+
+/* Sosiaalisen median ikonien linkit */
+.social-links a {
+    text-decoration: none;
+    color: #007bff;
+    transition: color 0.3s;
+}
+
+.social-links a:hover {
+    color: #0056b3;
+}
+
+.card ul { /* korttien määrityksiä */
+    color: #212529;
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-left: 1.2rem;
+}
+
+.card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    /*max-width: 400px;*/
+    
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.card-title {
+    font-weight: bold;
+    color: #1e3a5f;
+}
+
+.btn.btn-primary {
+    background-color: rgb(219, 173, 173);
+    border-color: rgb(225, 191, 191);
+    color: black;
+}
+  
+.btn.btn-primary:hover {
+    background-color: rgb(135, 96, 96);
+    border-color: rgb(135, 96, 96);
+}
+  /* Footerin tyylit */
+.footer {
+    background-color: #999999;
+    color: white;
+    padding: 40px 20px;
+    text-align: center;
+    font-family: "roboto", sans-serif;
+}
+  
+.footer-content {
+    width: 100%;
+    margin: 0 auto;
+}
+  
+.footer-links,
+.footer-socials {
+    margin-bottom: 15px;
+}
+  
+.footer-links a,
+.footer-socials a {
+    color: black;
+    text-decoration: none;
+    margin: 0 10px;
+    
+    transition: color 0.3s ease;
+}
+  
+.footer-links a:hover,
+.footer-socials a:hover {
+    color: rgb(135, 96, 96);
+}
+  
+.footer-copy {
+    font-size: 0.9em;
+    opacity: 0.8;
+    color: black;
+}
+
+/* Väritestausosion tyylit */
+.surface {
+    height: 200px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    transition: all 0.3s;
+    cursor: pointer;
+}
+
+.surface.active {
+    border: 2px solid #000;
+    box-shadow: 0 0 15px rgba(0,0,0,0.3);
+}
+
+.color-palette {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    gap: 5px;
+    margin: 30px;
+    margin-bottom: 30px;
+}
+
+.color-swatch {
+    width: 80%;
+    aspect-ratio: 1;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.2s;
+    border: 1px solid #ccc;
+    position: relative;
+}
+
+.color-swatch:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
+.color-tooltip {
+    position: absolute;
+    bottom: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #333;
+    color: white;
+    padding: 5px;
+    border-radius: 3px;
+    font-size: 12px;
+    opacity: 0;
+    transition: opacity 0.3s;
+    pointer-events: none;
+    z-index: 10;
+    white-space: nowrap;
+}
+
+.color-swatch:hover .color-tooltip {
+    opacity: 1;
+}
+
+@media (max-width: 768px) {
+    .color-palette {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+#svg-container {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+    padding: 20px;
+}
+
+svg {
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#surface1-svg, #surface2-svg {
+    width: 200px;
+    height: 200px;
+}
+
+.surface.active {
+    border: 2px solid #000;
+    box-shadow: 0 0 15px rgba(0,0,0,0.3);
+}
+
+@media (max-width: 768px) {
+    #surface1-svg, #surface2-svg {
+        width: 150px;
+        height: 150px;
+    }
+}
+
+@media screen and (max-width: 1250px) { /* Responsiivisuus, muuttaa etusivun laatikot joko vierekkäin tai allekkain riippuen näytöstä */
+    .artikkeli-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+}
