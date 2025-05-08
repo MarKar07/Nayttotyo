@@ -385,3 +385,148 @@ svg {
         align-items: center;
     }
 }
+
+/* Tässä ovat responsiiviset CSS-korjaukset sivustollesi 
+ * Lisää nämä style2.css tiedoston loppuun tai luo erillinen responsive.css tiedosto
+ */
+
+/* Ensin korjataan yleisiä responsiivisuusongelmia kaikille näytöille */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Varmistetaan, että lomakkeet toimivat mobiilissa */
+input, select, textarea {
+    max-width: 100%;
+}
+
+/* Lisätään overflow-x: hidden bodyyn estämään vaakasuunnan vieritys */
+body {
+    overflow-x: hidden;
+}
+
+/* Korjataan navigointipalkki mobiililaitteille */
+@media screen and (max-width: 768px) {
+    header {
+        padding: 15px 0; /* Pienempi padding mobiilissa */
+        position: fixed;
+        width: 100%;
+        z-index: 1000;
+    }
+    
+    .nav_links {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        background: rgb(255, 255, 255);
+    }
+    
+    .nav_links li {
+        display: block;
+        padding: 10px 0;
+        width: 100%;
+        text-align: center;
+    }
+    
+    /* Annetaan enemmän tilaa half-headerille mobiilissa */
+    .half-header {
+        padding: 0 5%; /* Vähemmän padding sivuilla */
+        margin-top: 60px; /* Kompensoidaan fixed headerin viemä tila */
+    }
+    
+    /* Artikkeli-ruudukon korjaukset */
+    .artikkeli-grid {
+        padding: 20px 10px;
+        gap: 30px;
+    }
+    
+    .artikkeli-box {
+        width: 100%; /* Täysi leveys mobiilissa */
+        height: auto;
+        min-height: 350px;
+    }
+    
+    .artikkeli-img img {
+        height: 200px; /* Pienempi kuvan korkeus mobiilissa */
+    }
+    
+    /* Footer-korjaukset */
+    .footer-links a, 
+    .footer-socials a {
+        display: block;
+        margin: 10px 0;
+    }
+    
+    /* Palvelut-sivun korjaukset */
+    .card {
+        margin-bottom: 15px;
+    }
+    
+    /* Karuselli-korjaukset */
+    .carousel-inner img {
+        height: 300px; /* Pienempi korkeus mobiilissa */
+    }
+    
+    /* Värikartta-sivun korjaukset */
+    .color-palette {
+        grid-template-columns: repeat(4, 1fr);
+        margin: 15px;
+    }
+    
+    #svg-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    #surface1-svg, #surface2-svg {
+        margin-bottom: 20px;
+    }
+}
+
+/* Tabletti-näytöt */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+    .artikkeli-box {
+        width: 45%; /* Kaksi laatikkoa per rivi */
+    }
+    
+    .half-header {
+        padding: 0 15%;
+    }
+    
+    .color-palette {
+        grid-template-columns: repeat(6, 1fr);
+    }
+}
+
+/* Erittäin pienet puhelimet */
+@media screen and (max-width: 480px) {
+    header {
+        padding: 10px 0;
+    }
+    
+    .nav_links li {
+        padding: 5px 0;
+    }
+    
+    .nav_links li a {
+        font-size: 16px;
+    }
+    
+    .half-header-text h1 {
+        font-size: 1.5rem;
+    }
+    
+    .half-header-text p {
+        font-size: 1rem;
+    }
+    
+    .artikkeli-img img {
+        height: 150px;
+    }
+    
+    .color-palette {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
